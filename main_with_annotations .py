@@ -613,7 +613,7 @@ while run:
         
         if event.type == pygame.KEYDOWN and not game_over:
             if event.key == pygame.K_RETURN and selection != 100 and ((turn<2 and selection<=len(white_pieces))or(turn>1 and selection<=len(black_pieces))):#problems arrive without the turn and selection part
-                if (white_pieces[selection] == 'switcher' and turn<2) or (black_pieces[selection] == 'switcher' and turn>1) and switch != 2:
+                if (white_pieces[selection] == 'switcher' and turn<2 and selection<=len(white_pieces)) or (black_pieces[selection] == 'switcher' and turn>1 and selection<=len(black_pieces)) and switch != 2:
                     if switch == 0:#activated switcher ability with return/enter and currently not activated
                        switch = 1#activate
                     else:
